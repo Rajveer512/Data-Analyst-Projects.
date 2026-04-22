@@ -1,0 +1,16 @@
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv('sales_data.csv')
+
+# 1. Handle missing values (e.g., fill missing 'Price' with the average)
+df['Price'] = df['Price'].fillna(df['Price'].mean())
+
+# 2. Convert date strings to datetime objects
+df['Order_Date'] = pd.to_datetime(df['Order_Date'])
+
+# 3. Create a new column for 'Total Profit'
+df['Total_Profit'] = df['Revenue'] - df['Cost']
+
+# Display the first 5 rows of cleaned data
+print(df.head())
