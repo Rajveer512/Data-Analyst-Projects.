@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set style
+sns.set_theme(style="whitegrid")
+
+# Create a Line Plot for Monthly Sales
+plt.figure(figsize=(10, 6))
+sns.lineplot(data=df, x='Month', y='Revenue', marker='o', color='teal')
+
+plt.title('Monthly Sales Revenue Trends (2025)', fontsize=14)
+plt.xlabel('Month', fontsize=12)
+plt.ylabel('Revenue (INR)', fontsize=12)
+plt.show()
